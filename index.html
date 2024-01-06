@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+    <title>THE CAB</title>
+</head>
+
+<body>
+    <div id="otpUserSUP">
+        <span id="status">status</span> <br>
+        <span id="message">message</span> <br>
+        OTP : <span id="otp">Error</span>
+        <i class="ri-close-circle-fill NextBtn" id="cancleBtn" onclick="cancleOTPuser()"></i>
+    </div>
+    <div id="verifiedSignUp">
+        <span id="messageVer">message</span> <br>
+        Token : <span id="otpVer">Error</span> <br>
+        <span id="remember" style="color: red;">Remember your Token for Future</span>
+        <i class="ri-close-circle-fill NextBtn" id="cancleBtn" onclick="cancleVerifiedUserPage()"></i>
+    </div>
+    <div class="navMenu" id="menus">
+        <i id="opening" class="ri-menu-unfold-fill toOpen menuIcon" onclick="menuUnfold()"></i>
+        <i id="closing" class="ri-menu-fold-fill toClose menuIcon nonActive" onclick="menuFold()"></i>
+
+        <div id="iconWrapper">
+            <div class="taxiIcon icons"><i class="ri-taxi-fill" onclick="cabBooking()"></i></div>
+            <div class="driverIcon icons"><i class="ri-user-add-fill" onclick="userSignIn_Up()"></i></div>
+            <div class="phoneIcon icons"><i class="ri-phone-fill" onclick="service()"></i></div>
+        </div>
+    </div>
+    <!-- <div class="userInfo" id="user">
+        <i class="ri-user-3-fill" onclick="userDetails()"></i>
+    </div> -->
+    <header id="header">
+        <div id="cabLogo" class="logo heading">THE CAB</div>
+    </header>
+    <div class="heading punchLine">
+        Your journey begins with a tap <br> Book a ride, make memories!
+    </div>
+    <!-- Main Content -->
+    <div class="poster ads heading">
+        <span id="text">Moving people, <br> and the world</span>
+        <img src="cargifposter.gif" alt="" class="gifAbso">
+        <img src="askingLift.gif" alt="" class="gifabsoLift">
+        <img src="cabonposter.gif" alt="" class="cabonposter">
+    </div>
+    <div id="cabListWrapper">
+        <h3>Available Cabs</h3>
+        <i class="ri-close-circle-fill NextBtn" id="cancleBtn" onclick="cancleList()"></i>
+    </div>
+    <h3 style="font-family:Georgia,'Times New Roman', Times, serif;margin: 2rem auto;">"On your Phones, get, set, book
+        your cab!"</h3>
+    <div id="journey">
+        <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;">Start your journey Now..!</h3>
+        <input type="text" name="startPoint" id="from" placeholder="From">
+        <input type="text" name="startPoint" id="toPlace" placeholder="To">
+        <button onclick="cabAvailable()">Search Cab</button>
+        <div id="cabAvailInfo">
+            <p id="statusCab"></p>
+            <i class="ri-close-circle-fill NextBtn" id="cancleBtn" onclick="cancleInfo()"></i>
+        </div>
+    </div>
+    <div id="useradd" class="userLogin">
+        <h2 class="loginHeading heading" onclick="userSignIn_Up()">Sign In / Sign Up</h2>
+        <div id="signUpUser">
+            <span style="color: black;font-weight: bold;">Sign Up</span>
+            <span id="alreadyRegLink">Already Registered?
+                <span id="signInPage" style="color: blue; font-weight:bolder;" onclick="userSignInPage()">Sign In</span>
+            </span>
+            <input type="number" name="mobNo" placeholder="Your Mobile No." id="mobNoUserS-UP"> <br><i
+                class="ri-shield-check-fill NextBtn" onclick="userSignUpAPI()"></i>
+            <i class="ri-close-circle-fill NextBtn" id="cancleBtn" onclick="cancleS_UP()"></i>
+        </div>
+        <div id="signInUser">
+            <span style="color: black;font-weight: bold;">Sign In</span> <br>
+            <input type="number" name="mobNo" placeholder="Your Mobile No." id="mobNoUserS-In"> <br><i
+                class="ri-shield-check-fill NextBtn" onclick="userSignInAPI()"></i>
+            <i class="ri-close-circle-fill NextBtn" id="cancleBtn" onclick="cancleS_In()"></i>
+        </div>
+        <div id="signUpUserVerify">
+            <span style="color: black;font-weight: bold;">Verify Sign Up</span> <br>
+            <input type="number" name="mobNo" placeholder="Your Mobile No." id="mobNoUserS-UP-verify"> <br>
+            <input type="number" name="otp" placeholder="Enter OTP" id="otpUserS-UP-verify"> <br><i
+                class="ri-shield-check-fill NextBtn" onclick="userSignUpAPIVerify()"></i>
+            <i class="ri-close-circle-fill NextBtn" id="cancleBtn" onclick="cancleS_UP_verify()"></i>
+        </div>
+        <div id="signInUserVerify">
+            <span style="color: black;font-weight: bold;">Verify Sign In</span> <br>
+            <input type="number" name="mobNo" placeholder="Your Mobile No." id="mobNoUserS-In-verify"> <br>
+            <input type="number" name="otp" placeholder="Enter OTP" id="otpUserS-In-verify"> <br>
+            <i class="ri-shield-check-fill NextBtn" onclick="userSignInAPIVerify()"></i>
+            <i class="ri-close-circle-fill NextBtn" id="cancleBtn" onclick="cancleS_In_verify()"></i>
+        </div>
+
+    </div>
+    <div id="vehicleReg" class="registerVeh">
+        <h2 class="registerHeading heading" onclick="driverSignUp()">Register Your Vehicle</h2>
+        <div id="driverAdd" class="driver register vehInfo">
+
+            <div id="first">
+                <div class="numSignUpNav">
+                    <div class="iconNav">
+                        <i class="ri-number-1 numNav numOne"></i><i class="ri-checkbox-circle-fill prcDone"></i>
+                    </div>
+                    <span>&nbsp;--&nbsp;</span>
+                    <div class="iconNav">
+                        <i class="ri-number-2 numNav numTwo"></i><i class="ri-checkbox-circle-fill prcDone"></i>
+                    </div>
+                    <span>&nbsp;--&nbsp;</span>
+                    <div class="iconNav">
+                        <i class="ri-number-3 numNav numThree"></i><i class="ri-checkbox-circle-fill prcDone"></i>
+                    </div>
+                </div>
+                <input type="text" placeholder="Driver Name" name="named" id="driverName" class="driverInfo" required>
+                <input type="text" placeholder="Driver's Mobile No." name="mobNo" id="driverMobNo" class="driverInfo"
+                    required>
+                <input type="email" placeholder="Driver's Email" name="email" id="driverEmail" class="driverInfo"
+                    required>
+                <i class="ri-arrow-right-circle-fill NextBtn" onclick="driverSignUp2()"></i>
+                <i class="ri-close-circle-fill NextBtn" id="cancleBtn" onclick="cancle1()"></i>
+
+            </div>
+
+            <div id="second">
+                <div class="numSignUpNav">
+                    <div class="iconNav">
+                        <i class="ri-number-1 numNav numOne" id="iconNavOne"></i><i
+                            class="ri-checkbox-circle-fill prcDone" id="checkNavOne"></i>
+                    </div>
+                    <span id="line1-2">&nbsp;--&nbsp;</span>
+                    <div class="iconNav">
+                        <i class="ri-number-2 numNav numTwo"></i><i class="ri-checkbox-circle-fill prcDone"></i>
+                    </div>
+                    <span>&nbsp;--&nbsp;</span>
+                    <div class="iconNav">
+                        <i class="ri-number-3 numNav numThree"></i><i class="ri-checkbox-circle-fill prcDone"></i>
+                    </div>
+                </div>
+                <input type="text" placeholder="Driver License Number" name="driverLicNo" id="driverLicenseNumber"
+                    class="driverInfo" required>
+                <input type="text" placeholder="Vehicle Register Number" name="vehRegNo" id="vehicleRegisterNumber"
+                    class="driverInfo" required>
+                <input type="text" placeholder="Vehicle Type" name="vehiType" id="vehicleType" class="driverInfo"
+                    required>
+                <i class="ri-arrow-right-circle-fill NextBtn" onclick="driverSignUp3()"></i>
+                <i class="ri-arrow-left-circle-fill NextBtn" onclick="back2first()"></i>
+                <i class="ri-close-circle-fill NextBtn" id="cancleBtn" onclick="cancle2()"></i>
+
+
+            </div>
+
+            <div id="third">
+                <div class="numSignUpNav">
+                    <div class="iconNav">
+                        <i class="ri-number-1 numNav numOne" id="iconNavOne"></i>
+                        <i class="ri-checkbox-circle-fill prcDone" id="checkNavOne"></i>
+                    </div>
+                    <span id="line1-2Com">&nbsp;--&nbsp;</span>
+                    <div class="iconNav">
+                        <i class="ri-number-2 numNav numTwo" id="iconNavOne"></i>
+                        <i class="ri-checkbox-circle-fill prcDone" id="checkNavOne"></i>
+                    </div>
+                    <span id="line2-3">&nbsp;--&nbsp;</span>
+                    <div class="iconNav">
+                        <i class="ri-number-3 numNav numThree"></i><i class="ri-checkbox-circle-fill prcDone"></i>
+                    </div>
+                </div>
+                <input type="bool" placeholder="Available (True/False)" name="availability" id="vehAvailable"
+                    class="driverInfo" required>
+                <input type="text" placeholder="Fare per Km" name="fare" id="fare_km" class="driverInfo" required>
+                <input type="number" placeholder="Capacity of Vehicle" name="capacity" id="memCapacity"
+                    class="driverInfo" required>
+                <i class="ri-shield-check-fill NextBtn" onclick="driverSignUpAPI()"></i>
+                <i class="ri-arrow-left-circle-fill NextBtn" onclick="back2second()"></i>
+                <i class="ri-close-circle-fill NextBtn" id="cancleBtn" onclick="cancle3()"></i>
+
+            </div>
+            <div id="fourth">
+                <div class="numSignUpNav">
+                    <div class="iconNav">
+                        <i class="ri-number-1 numNav numOne" id="iconNavOne"></i>
+                        <i class="ri-checkbox-circle-fill prcDone" id="numBtn1"></i>
+                    </div>
+                    <span id="line1-2Com">&nbsp;--&nbsp;</span>
+                    <div class="iconNav">
+                        <i class="ri-number-2 numNav numTwo" id="iconNavOne"></i>
+                        <i class="ri-checkbox-circle-fill prcDone" id="numBtn2"></i>
+                    </div>
+                    <span id="line1-2Com">&nbsp;--&nbsp;</span>
+                    <div class="iconNav">
+                        <i class="ri-number-3 numNav numThree" id="iconNavOne"></i>
+                        <i class="ri-checkbox-circle-fill prcDone" id="numBtn3"></i>
+                    </div>
+                </div>
+                <p style="text-align:center;" id="verified">Please wait while we verify your information...</p>
+                <i class="ri-close-circle-fill NextBtn" id="cancleBtn" onclick="cancle4()"></i>
+
+            </div>
+
+        </div>
+    </div>
+    <div id="footer">
+        <div id="nameLinks">
+            <div class="heading footername">THE CAB</div>
+            <div class="links">
+                <a class="link" href="https://www.linkedin.com/in/shivmangal/" target="_blank"><i
+                        class="ri-linkedin-box-fill"></i></a>
+                <a class="link" href="https://www.instagram.com/_as_am_as_/" target="_blank"><i
+                        class="ri-instagram-fill"></i></a>
+                <a href="https://github.com/mangal2003" class="link" target="_blank"><i class="ri-github-fill"></i></a>
+                <a class="link" href="mailto:mangalthemars@gmail.com?subject=Hello%20
+                                Shiv!"><i class="ri-mail-fill"></i></a>
+            </div>
+            <p>Copyright © 2024 THE CAB Pvt Ltd. <br> All Rights Reserved.</p>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
