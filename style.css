@@ -1,0 +1,416 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+}
+.navMenu {
+  position: absolute;
+  font-size: x-large;
+  width: 18vw;
+  max-width: 3.2rem;
+  background-color: #fbf700;
+  padding: 0.6rem 0.3rem;
+  border-bottom-right-radius: 0.6rem;
+  color: #000;
+  min-height: 3rem;
+  z-index: 10;
+  cursor: pointer;
+}
+.userInfo {
+  position: absolute;
+  font-size: x-large;
+  width: 18vw;
+  max-width: 3.2rem;
+  background-color: #fbf700;
+  padding: 0.6rem 0.3rem;
+  border-bottom-left-radius: 0.6rem;
+  color: #000;
+  min-height: 3rem;
+  z-index: 10;
+  cursor: pointer;
+  right: 0;
+}
+
+.icons {
+  margin: 1rem auto;
+}
+#iconWrapper {
+  display: none;
+}
+.nonActive {
+  display: none;
+}
+
+#header {
+  background: linear-gradient(-87deg, #45ffca, #feffac, #ffb6d9, #d67bff);
+  height: 3rem;
+  margin-top: 0;
+  display: flex;
+  color: #000;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  font-family: "Rubik Doodle Shadow";
+}
+.punchLine {
+  padding: 1rem;
+  line-height: 1.6rem;
+  text-shadow: 0.02rem 0.02rem rgb(255, 255, 255);
+  font-size: 1.04rem;
+}
+
+.logo {
+  color: #000;
+  font-size: larger;
+}
+
+.poster {
+  position: relative;
+  width: 90vw;
+  height: 14rem;
+  margin: auto;
+  background: linear-gradient(430deg, #6499e9, #9eddff, #a6f6ff, #befff7);
+  border-radius: 0.7rem;
+}
+.poster #text {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 5%;
+  color: #000;
+  font-size: x-large;
+}
+.poster .gifAbso {
+  position: absolute;
+  height: 6rem;
+  mix-blend-mode: multiply;
+  left: 25%;
+  top: 10%;
+}
+.poster .gifabsoLift {
+  position: absolute;
+  height: 7rem;
+  mix-blend-mode: multiply;
+  right: 5%;
+  top: 20%;
+}
+.poster .cabonposter {
+  position: absolute;
+  height: 7rem;
+  mix-blend-mode: multiply;
+  right: 29%;
+  top: 30%;
+}
+@media screen and (min-width: 1000px) {
+  /* pc */
+  .poster .gifAbso {
+    position: absolute;
+    height: 6rem;
+    mix-blend-mode: multiply;
+    left: 30%;
+    top: 25%;
+  }
+  .poster .gifabsoLift {
+    position: absolute;
+    height: 7rem;
+    mix-blend-mode: multiply;
+    right: 5%;
+    top: 20%;
+  }
+  .poster .cabonposter {
+    position: absolute;
+    height: 9rem;
+    mix-blend-mode: multiply;
+    right: 30%;
+    top: 20%;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .poster .gifAbso {
+    display: none;
+  }
+  .poster .gifabsoLift {
+    position: absolute;
+    height: 6rem;
+    mix-blend-mode: multiply;
+    right: 2%;
+    top: 27%;
+  }
+  .poster .cabonposter {
+    position: absolute;
+    height: 6rem;
+    mix-blend-mode: multiply;
+    right: 33%;
+    top: 10%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .poster .gifAbso {
+    display: none;
+  }
+  .poster .gifabsoLift {
+    display: none;
+  }
+  .poster .cabonposter {
+    position: absolute;
+    height: 6rem;
+    mix-blend-mode: multiply;
+    right: 10%;
+    top: 2%;
+  }
+}
+
+#footer {
+  margin: 1rem auto 0;
+  background-color: #929191;
+  padding: 1rem 0;
+}
+.footername {
+  font-size: 1.8rem;
+}
+.links {
+  margin: 1.3rem auto;
+}
+.link {
+  text-decoration: none;
+  color: #fff;
+  font-size: large;
+  margin: 0.5rem 0.7rem;
+}
+#useradd,
+#vehicleReg {
+  margin: 1rem auto;
+  width: 90vw;
+  max-width: 25rem;
+  background-color: #88b4a6;
+  padding: 0.4rem 1rem;
+  border-radius: 0.4rem;
+  position: relative;
+  cursor: pointer;
+}
+#first,
+#second,
+#third,
+#fourth {
+  display: none;
+  z-index: 15;
+}
+
+#first,
+#second,
+#third,
+#fourth {
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #25cdca;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  width: 75%;
+  position: absolute;
+  top: -200%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+}
+.driverInfo,
+#mobNoUserS-UP,
+#mobNoUserS-UP-verify,
+#otpUserS-UP-verify,
+#mobNoUserS-In,
+#otpUserS-In-verify,
+#mobNoUserS-In-verify,
+#from,
+#toPlace {
+  padding: 0.4rem 0.7rem;
+  border: none;
+  border-radius: 0.2rem;
+  margin: 0.3rem auto;
+  font-size: medium;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1) inset,
+    0px -5px 15px rgba(0, 0, 0, 0.2);
+  width: 95%;
+  max-width: 23rem;
+}
+.NextBtn {
+  color: #000000;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.numNav {
+  border: 2px solid grey;
+  /* display: none; */
+  border-radius: 50%;
+  padding: 0.6rem;
+}
+.prcDone {
+  color: rgb(0, 0, 0);
+  border: 2px solid rgb(14, 14, 14);
+  border-radius: 50%;
+  display: none;
+  padding: 0.3rem;
+  font-size: 1.7rem;
+}
+.numSignUpNav {
+  margin: 1rem auto 2rem;
+  color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconNav {
+  color: crimson;
+}
+#iconNavOne {
+  display: none;
+}
+#checkNavOne,
+#numBtn1,
+#numBtn2,
+#numBtn3 {
+  display: inline;
+}
+#line1-2,
+#line2-3,
+#line1-2Com {
+  color: rgb(0, 0, 0);
+}
+.numSignUpNav > span {
+  font-size: large;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+#verified {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  background-color: #19e158;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+}
+
+#cancleBtn {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+}
+
+#cabListWrapper {
+  display: none;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 90vw;
+  max-width: 30rem;
+  background-color: #74d15c;
+  padding: 0.4rem;
+  z-index: 15;
+  padding-top: 2rem;
+  border-radius: 0.3rem;
+}
+
+#cabListWrapper > div {
+  color: black;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #a2ec8f;
+  border-radius: 0.4rem;
+  margin: 0.1rem auto;
+  cursor: pointer;
+}
+#signUpUser,
+#signInUser {
+  display: none;
+  background-color: #3fd8b7;
+  z-index: 15;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2.3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 92%;
+  max-width: 25rem;
+  border-radius: 0.3rem;
+}
+#alreadyRegLink {
+  color: rgb(220, 20, 20);
+}
+#otpUserSUP,
+#signUpUserVerify,
+#verifiedSignUp,
+#signInUserVerify {
+  text-align: center;
+  padding: 1rem;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #66e35d;
+  width: 90vw;
+  max-width: 25rem;
+  font-weight: bold;
+  color: black;
+  border-radius: 0.4rem;
+  display: none;
+  z-index: 16;
+}
+#journey {
+  background-color: #88b4a6;
+  width: 85vw;
+  max-width: 25rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  line-height: 3rem;
+  border-radius: 2rem;
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+  margin: 1.5rem auto 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 1.4rem;
+}
+#cabAvailInfo {
+  background-color: #ff0000;
+  padding: 3rem;
+  color: #000;
+  position: absolute;
+  width: 80vw;
+  max-width: 20rem;
+  margin: auto;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 15;
+}
